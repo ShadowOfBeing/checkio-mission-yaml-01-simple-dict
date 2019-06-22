@@ -1,19 +1,25 @@
 "use strict";
 
-function sumTwo(a, b) {
-    // sums two passed arguments
-
+function yaml(a) {
     // your code here
-    return 0;
+    return undefined;
 }
 
 var assert = require('assert');
+
 if (!global.is_checking) {
     console.log('Example:');
-    console.log(sumTwo(3, 2));
+    console.log(yaml('name: Alex\nage: 12'));
 
-    // These "asserts" are used for self-checking and not for an auto-testing
-    assert.equal(sumTwo(3, 2), 5);
-    assert.equal(sumTwo(5, 7), 12);
+    // These "asserts" are used for self-checking
+    assert.deepEqual(yaml('name: Alex\nage: 12'), {'age': 12, 'name': 'Alex'});
+    assert.deepEqual(yaml('name: Alex Fox\n'
+ 'age: 12\n'
+ '\n'
+ 'class: 12b'), {'age': 12,
+ 'class': '12b',
+ 'name': 'Alex Fox'});
+
     console.log("Coding complete? Click 'Check' to earn cool rewards!");
 }
+    

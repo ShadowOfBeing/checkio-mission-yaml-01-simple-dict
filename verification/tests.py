@@ -11,26 +11,53 @@ Each test is a dict with
 TESTS = {
     "Basics": [
         {
-            "input": [3, 2],
-            "answer": 5,
-            "explanation": "3+2=?"
+            "input": ["""name: Alex
+age: 12"""],
+            "answer": { 
+              "name": "Alex",
+              "age": 12
+            }
         },
         {
-            "input": [5, 7],
-            "answer": 12,
-            "explanation": "5+7=?"
+            "input": ["""name: Alex Fox
+age: 12
+
+class: 12b"""],
+            "answer": {
+              "age": 12, 
+              "name": "Alex Fox", 
+              "class": "12b"
+            }
         }
     ],
     "Extra": [
         {
-            "input": [6, 3],
-            "answer": 9,
-            "explanation": "6+3=?"
+            "input": ["""
+name: Alex
+age: 12"""],
+            "answer": { 
+              "name": "Alex",
+              "age": 12
+            },
+            "explanation": "Extra space at the beginning"
         },
         {
-            "input": [6, 7],
-            "answer": 13,
-            "explanation": "6+7=?"
+            "input": ["""12: 12"""],
+            "answer": {"12": 12},
+            "explanation": 'Key can be int'
+        },
+        {
+            "input": ["""name: Bob Dylan
+burn: 24 May 1941
+resident: Malibu, California, U.S
+
+children: 6"""],
+            "answer": {
+              "resident": "Malibu, California, U.S", 
+              "burn": "24 May 1941", 
+              "name": "Bob Dylan", 
+              "children": 6
+            }
         }
     ]
 }
