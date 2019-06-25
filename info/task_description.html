@@ -77,15 +77,12 @@ yaml('name: Alex Fox
  'name': 'Alex Fox'}
 </pre>
 {% else %}
-<pre class="brush: python">yaml('name: Alex
-age: 12') == {'age': 12, 'name': 'Alex'}
-yaml('name: Alex Fox
-'
- 'age: 12
-'
- '
-'
- 'class: 12b') == {'age': 12,
+<pre class="brush: python">yaml("""name: Alex
+age: 12""") == {'age': 12, 'name': 'Alex'}
+yaml("""name: Alex Fox
+age: 12
+
+class: 12b""") == {'age': 12,
  'class': '12b',
  'name': 'Alex Fox'}
 </pre>
